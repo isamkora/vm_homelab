@@ -31,3 +31,14 @@ spec:
   values:
     grafana:
       adminPassword: kora
+
+      ingress:
+        enabled: true
+        ingressClassName: traefik
+        hosts:
+          - grafana.mycronoslab.top
+        ##
+        tls: []
+        # - secretName: grafana-general-tls
+        #   hosts:
+        #   - grafana.example.com
