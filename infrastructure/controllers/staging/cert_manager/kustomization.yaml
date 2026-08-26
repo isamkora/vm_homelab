@@ -4,4 +4,3 @@ resources:
   - ../../base/cert_manager/
   - cloudflare_secret.yaml
   - clusterissuer.yaml
-  - certificate.yaml

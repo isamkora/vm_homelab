@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: monitoring-controllers
+  name: infrastructure
   namespace: flux-system
 spec:
   interval: 1m0s
@@ -10,11 +10,12 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/controllers/staging/kube_prometheus_stack
+  path: ./infrastructure/controllers/staging
   prune: true
-  dependsOn:
-    - name: cert-manager
-
+  decryption:
+    provider: sops
+    sourceRef:
+      name: sops-age
 ---
 # apiVersion: kustomize.toolkit.fluxcd.io/v1
 # kind: Kustomization
