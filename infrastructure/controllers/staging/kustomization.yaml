@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - cert_manager
   - kube_prometheus_stack
+  - renovate
